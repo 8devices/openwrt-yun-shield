@@ -16,3 +16,13 @@ endef
 
 $(eval $(call Profile,Yun))
 
+define Profile/NUY
+	NAME:=8devices NUY
+	PACKAGES:=kmod-usb-core kmod-usb2
+endef
+
+define Profile/NUY/Description
+	Package set optimized for the 8devices NUY.
+endef
+
+$(eval $(call Profile,NUY))
