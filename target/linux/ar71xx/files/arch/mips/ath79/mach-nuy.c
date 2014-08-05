@@ -28,9 +28,6 @@
 
 #define DS_GPIO_OE			22 /*SPI*/
 #define DS_GPIO_AVR_RESET		12
-
-// Maintained to have the console in the previous version of DS2 working
-#define DS_GPIO_AVR_RESET_DS2           7
 #define DS_GPIO_OE2                     16 /*HANDSHAKE */
 #define DS_GPIO_UART_ENA		17
 #define DS_GPIO_CONF_BTN		11
@@ -81,17 +78,16 @@ static void __init ds_common_setup(void)
 
 	ath79_register_wmac(art + DS_CALDATA_OFFSET,
 			    art + DS_WMAC_MAC_OFFSET);
-	ath79_setup_ar933x_phy4_switch(true, true); //debug
 	ath79_init_mac(ath79_eth0_data.mac_addr, art + DS_MAC0_OFFSET, 0);
-	//ath79_init_mac(ath79_eth1_data.mac_addr, art + DS_MAC1_OFFSET, 0);
+	ath79_init_mac(ath79_eth1_data.mac_addr, art + DS_MAC1_OFFSET, 0);
 
 	ath79_register_mdio(0, 0x0);
 
 	/* LAN ports */
-	ath79_register_eth(1);
+	ath79_register_eth(0);
 
 	/* WAN port */
-	//ath79_register_eth(0);
+	ath79_register_eth(1);
 }
 
 static void __init ds_setup(void)
@@ -118,14 +114,6 @@ static void __init ds_setup(void)
 	t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
 	t |= AR933X_BOOTSTRAP_MDIO_GPIO_EN;
 	ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
-        
-	// Put the avr reset to high 
-	if (gpio_request_one(DS_GPIO_AVR_RESET_DS2,
-                 GPIOF_OUT_INIT_HIGH | GPIOF_EXPORT_DIR_FIXED,
-                 "OE-1") != 0)
-                printk("Error setting AVR reset\n");
-	gpio_unexport(DS_GPIO_AVR_RESET_DS2);
-	gpio_free(DS_GPIO_AVR_RESET_DS2);
 
 	// enable OE of level shifter
 	if (gpio_request_one(DS_GPIO_OE,
