@@ -59,7 +59,6 @@ static struct gpio_led ds_leds_gpio[] __initdata = {
 };
 
 static struct gpio_keys_button ds_gpio_keys[] __initdata = {
-#ifndef DS1
 	{
 		.desc		= "configuration button",
 		.type		= EV_KEY,
@@ -68,7 +67,6 @@ static struct gpio_keys_button ds_gpio_keys[] __initdata = {
 		.gpio		= DS_GPIO_CONF_BTN,
 		.active_low	= 1,
 	},
-#endif
 };
 
 static void __init ds_common_setup(void)
@@ -133,5 +131,5 @@ static void __init ds_setup(void)
 		printk("Error setting GPIO OE2\n");
 }
 
-MIPS_MACHINE(ATH79_MACH_Yun, "NUY", "8devices NUY",
+MIPS_MACHINE(ATH79_MACH_NUY, "NUY", "8devices NUY",
 	     ds_setup);

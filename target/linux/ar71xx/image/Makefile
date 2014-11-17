@@ -937,6 +937,7 @@ $(eval $(call SingleProfile,ZyXEL,$(fs_64k),NBG_460N_550N_550NH,nbg460n_550n_550
 
 
 $(eval $(call MultiProfile,Yun,YUN_16M YUN_8M))
+$(eval $(call MultiProfile,Yun_compat,YUN_16M YUN_8M NUY))
 $(eval $(call MultiProfile,AP121,AP121_8M AP121_4M))
 $(eval $(call MultiProfile,EWDORIN, EWDORINAP EWDORINRT))
 $(eval $(call MultiProfile,TEW652BRP,TEW652BRP_FW TEW652BRP_RECOVERY))

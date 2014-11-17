@@ -26,3 +26,15 @@ define Profile/NUY/Description
 endef
 
 $(eval $(call Profile,NUY))
+
+
+define Profile/Yun_compat
+	NAME:=All Arduino Yun compatible boards
+	PACKAGES:=kmod-usb-core kmod-usb2
+endef
+
+define Profile/Yun/Description
+	Packages for the Arduino Yun, 8devices NUY.
+endef
+
+$(eval $(call Profile,Yun_compat))

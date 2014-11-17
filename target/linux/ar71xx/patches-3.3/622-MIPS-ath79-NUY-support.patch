@@ -26,7 +26,7 @@
  obj-$(CONFIG_ATH79_MACH_WZR_HP_AG300H)	+= mach-wzr-hp-ag300h.o
  obj-$(CONFIG_ATH79_MACH_WZR_HP_G450H)	+= mach-wzr-hp-g450h.o
  obj-$(CONFIG_ATH79_MACH_ZCN_1523H)	+= mach-zcn-1523h.o
-+obj-$(CONFIG_ATH79_MACH_NUY)	+= mach-nuy.o
++obj-$(CONFIG_ATH79_MACH_NUY)		+= mach-nuy.o
  
 --- a/arch/mips/ath79/machtypes.h
 +++ b/arch/mips/ath79/machtypes.h
@@ -34,7 +34,7 @@
  	ATH79_MACH_ZCN_1523H_2,		/* Zcomax ZCN-1523H-2-xx */
  	ATH79_MACH_ZCN_1523H_5,		/* Zcomax ZCN-1523H-5-xx */
  	ATH79_MACH_Yun,			/* Yun */
-+    ATH79_MACH_NUY,         /* 8devices NUY */
++    	ATH79_MACH_NUY,			/* 8devices NUY */
  };
  
  #endif /* _ATH79_MACHTYPE_H */
