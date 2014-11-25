@@ -34,8 +34,8 @@
 +	}
 +	else if (clk == 40000000) {
 +		if (baud == 250000 || baud == 230400) {
-+			*scale = 0x0005;
-+			*step  = 0x1333;
++			*scale = 0x0004;
++			*step  = 0x1000;
 +			return;
 +		}
 +	}
