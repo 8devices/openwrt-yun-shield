@@ -84,8 +84,8 @@ if [ `basename $blkdev` != "block" ]; then
 		reset_dev_section_cb
 		;;
 	remove)
-		umount /dev/$device
-		umount $mountpoint
+		umount -l /dev/$device
+		umount -l $mountpoint
 		;;
     esac	
 
