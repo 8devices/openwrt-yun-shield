@@ -22,9 +22,9 @@
 #include "gpio.h"
 #include "linux/gpio.h"
 
-#define DS_GPIO_LED_WLAN		13
+#define DS_GPIO_LED_READY		13
 #define DS_GPIO_LED_WAN			1
-#define DS_GPIO_LED_USB			0
+#define DS_GPIO_LED_WLAN		0
 
 #define DS_GPIO_OE			22 /*SPI*/
 #define DS_GPIO_AVR_RESET		12
@@ -42,18 +42,18 @@
 
 static struct gpio_led ds_leds_gpio[] __initdata = {
 	{
-		.name		= "ds:green:usb",
-		.gpio		= DS_GPIO_LED_USB,
+		.name		= "nuy:white:ready",
+		.gpio		= DS_GPIO_LED_READY,
 		.active_low	= 1,
 	},
 	{
-		.name		= "ds:green:wlan",
-		.gpio		= DS_GPIO_LED_WLAN,
-		.active_low	= 1,
-	},
-	{
-		.name		= "ds:green:wan",
+		.name		= "nuy:orange:wan",
 		.gpio		= DS_GPIO_LED_WAN,
+		.active_low	= 1,
+	},
+	{
+		.name		= "nuy:blue:wlan",
+		.gpio		= DS_GPIO_LED_WLAN,
 		.active_low	= 1,
 	},
 };
