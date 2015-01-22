@@ -25,6 +25,7 @@
 #define DS_GPIO_LED_READY		13
 #define DS_GPIO_LED_WAN			1
 #define DS_GPIO_LED_WLAN		0
+#define DS_GPIO_LED_USER		15
 
 #define DS_GPIO_OE			22 /*SPI*/
 #define DS_GPIO_AVR_RESET		12
@@ -42,7 +43,7 @@
 
 static struct gpio_led ds_leds_gpio[] __initdata = {
 	{
-		.name		= "nuy:white:ready",
+		.name		= "nuy:white:system",
 		.gpio		= DS_GPIO_LED_READY,
 		.active_low	= 1,
 	},
@@ -54,6 +55,11 @@ static struct gpio_led ds_leds_gpio[] __initdata = {
 	{
 		.name		= "nuy:blue:wlan",
 		.gpio		= DS_GPIO_LED_WLAN,
+		.active_low	= 1,
+	},
+	{
+		.name		= "nuy:red:user",
+		.gpio		= DS_GPIO_LED_USER,
 		.active_low	= 1,
 	},
 };
