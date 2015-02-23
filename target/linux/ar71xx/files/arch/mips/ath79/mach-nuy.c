@@ -60,7 +60,7 @@ static struct gpio_led ds_leds_gpio[] __initdata = {
 	{
 		.name		= "nuy:red:user",
 		.gpio		= DS_GPIO_LED_USER,
-		.active_low	= 1,
+		.active_low	= 0,
 	},
 };
 
