@@ -29,6 +29,7 @@ post_auto_mount() {
 
 	_symlink_if_special "$mnt_path/arduino" $mnt_path $SD
 	_symlink_if_special "$mnt_path/arduino/www" "$mnt_path/arduino/www" $WWW
+	[ -x /usr/bin/autoflash-sketch-usb ] /usr/bin/autoflash-sketch-usb
 }
 
 post_auto_umount() {
