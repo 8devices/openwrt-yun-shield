@@ -24,6 +24,11 @@ apt-get install -y git subversion build-essential asciidoc \
 	bcc sharutils openjdk-7-jdk mercurial cvs bzr \
 	nodejs-legacy curl
 
+if [ `getconf LONG_BIT` = "64" ]
+then
+	apt-get install libc6-dev-i386
+if
+
 curl https://www.npmjs.org/install.sh | sh
 
 echo "ALL DONE! YEAH!!"
