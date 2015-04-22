@@ -43,22 +43,22 @@
 
 static struct gpio_led ds_leds_gpio[] __initdata = {
 	{
-		.name		= "nuy:white:system",
+		.name		= "yun-shield:white:system",
 		.gpio		= DS_GPIO_LED_READY,
 		.active_low	= 1,
 	},
 	{
-		.name		= "nuy:orange:wan",
+		.name		= "yun-shield:orange:wan",
 		.gpio		= DS_GPIO_LED_WAN,
 		.active_low	= 1,
 	},
 	{
-		.name		= "nuy:blue:wlan",
+		.name		= "yun-shield:blue:wlan",
 		.gpio		= DS_GPIO_LED_WLAN,
 		.active_low	= 1,
 	},
 	{
-		.name		= "nuy:red:user",
+		.name		= "yun-shield:red:user",
 		.gpio		= DS_GPIO_LED_USER,
 		.active_low	= 0,
 	},
@@ -113,7 +113,7 @@ static void __init ds_setup(void)
 	ath79_gpio_function2_setup(AR933X_GPIO_FUNC2_JUMPSTART_DISABLE|
 					AR933X_GPIO_FUNC2_WPS_DISABLE, 0);
 
-	printk("Setting NUY GPIO\n");
+	printk("Setting GPIO\n");
 
 	t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
 	t |= AR933X_BOOTSTRAP_MDIO_GPIO_EN;
@@ -137,5 +137,5 @@ static void __init ds_setup(void)
 		printk("Error setting GPIO OE2\n");
 }
 
-MIPS_MACHINE(ATH79_MACH_NUY, "NUY", "8devices NUY",
+MIPS_MACHINE(ATH79_MACH_NUY, "NUY", "Arduino Yun Shield",
 	     ds_setup);

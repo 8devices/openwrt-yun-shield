@@ -90,8 +90,8 @@ nbg460n_550n_550nh)
 	;;
 
 nuy)
-	ucidef_set_led_netdev "wan" "WAN" "nuy:orange:wan" "eth1"
-	ucidef_set_led_netdev "wlan" "WLAN" "nuy:blue:wlan" "wlan0"
+	ucidef_set_led_netdev "wan" "WAN" "yun-shield:orange:wan" "eth1"
+	ucidef_set_led_netdev "wlan" "WLAN" "yun-shield:blue:wlan" "wlan0"
 	;;
 
 om2p | \
