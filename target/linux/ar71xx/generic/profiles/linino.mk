@@ -16,16 +16,16 @@ endef
 
 $(eval $(call Profile,Yun))
 
-define Profile/NUY
-	NAME:=8devices NUY
+define Profile/Yun_Shield
+	NAME:=Arduino Yun Shield
 	PACKAGES:=kmod-usb-core kmod-usb2
 endef
 
-define Profile/NUY/Description
-	Package set optimized for the 8devices NUY.
+define Profile/Yun_Shield/Description
+	Package set optimized for the Arduino Yun Shield.
 endef
 
-$(eval $(call Profile,NUY))
+$(eval $(call Profile,Yun_Shield))
 
 
 define Profile/Yun_compat

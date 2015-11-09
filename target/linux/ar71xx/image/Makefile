@@ -797,7 +797,7 @@ endef
 $(eval $(call SingleProfile,YunLzma,$(fs_64k),YUN_8M,yun-8M,Yun,ttyATH0,250000,$$(yun_mtdlayout_8M),1310720,6619136,RKuImage))
 $(eval $(call SingleProfile,YunLzma,$(fs_64k),YUN_16M,yun-16M,Yun,ttyATH0,250000,$$(yun_mtdlayout_16M),1310720,15007744,RKuImage))
 
-$(eval $(call SingleProfile,AthLzma,$(fs_64k),NUY,nuy-16M,NUY,ttyATH0,250000,$$(nuy_mtdlayout_16M),1310720,15073280,KRuImage))
+$(eval $(call SingleProfile,AthLzma,$(fs_64k),YUN_SHIELD,yun-shield,Yun_Shield,ttyATH0,250000,$$(nuy_mtdlayout_16M),1310720,15073280,KRuImage))
 
 $(eval $(call SingleProfile,ALFA,$(fs_64k),ALFANX,alfa-nx,ALFA-NX,ttyS0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,vmlinux.gz.uImage,pb9x-2.6.31-jffs2))
 $(eval $(call SingleProfile,ALFA,$(fs_64k),HORNETUB,hornet-ub,HORNET-UB,ttyATH0,115200,$$(alfa_mtdlayout_8M),1638400,6291456,kernel_image,rootfs_image))
@@ -937,7 +937,7 @@ $(eval $(call SingleProfile,ZyXEL,$(fs_64k),NBG_460N_550N_550NH,nbg460n_550n_550
 
 
 $(eval $(call MultiProfile,Yun,YUN_16M YUN_8M))
-$(eval $(call MultiProfile,Yun_compat,YUN_16M YUN_8M NUY))
+$(eval $(call MultiProfile,Yun_compat,YUN_16M YUN_8M YUN_SHIELD))
 $(eval $(call MultiProfile,AP121,AP121_8M AP121_4M))
 $(eval $(call MultiProfile,EWDORIN, EWDORINAP EWDORINRT))
 $(eval $(call MultiProfile,TEW652BRP,TEW652BRP_FW TEW652BRP_RECOVERY))
