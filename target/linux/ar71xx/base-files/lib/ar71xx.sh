@@ -447,7 +447,7 @@ ar71xx_board_detect() {
 	*"Arduino Yun")
 		name="yun"
 		;;
-	*"Arduino Yun Shield")
+	*"Yun Shield")
 		name="nuy"
 		;;
 	esac

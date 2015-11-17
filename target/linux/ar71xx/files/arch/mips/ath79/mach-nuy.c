@@ -1,5 +1,5 @@
 /*
- *  Arduino Yun Shield support
+ *  Yun Shield support
  *
  *  Copyright (C) 2011-2012 Gabor Juhos <juhosg@openwrt.org>
  *
@@ -137,5 +137,5 @@ static void __init ds_setup(void)
 		printk("Error setting GPIO OE2\n");
 }
 
-MIPS_MACHINE(ATH79_MACH_NUY, "Yun_Shield", "Arduino Yun Shield",
+MIPS_MACHINE(ATH79_MACH_NUY, "Yun_Shield", "Yun Shield",
 	     ds_setup);
