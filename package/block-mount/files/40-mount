@@ -86,6 +86,8 @@ if [ `basename $blkdev` != "block" ]; then
 	remove)
 		umount -l /dev/$device
 		umount -l $mountpoint
+		rmdir  /mnt/$device
+		post_auto_umount
 		;;
     esac	
 
